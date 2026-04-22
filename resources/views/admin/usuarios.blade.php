@@ -1,25 +1,31 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-slate-800 leading-tight">
-            🛠️ Administración de Usuarios
-        </h2>
+        <div class="admin-header">
+            <h2 class="admin-title">🛠️ Administración de Usuarios</h2>
+            <span class="admin-total">
+                Total: {{ count($users) }} usuarios
+            </span>
+        </div>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="admin-container">
+        <div class="admin-wrapper">
 
             @if(session('success'))
-                <div class="bg-green-100 text-green-700 p-3 rounded mb-4">
+                <div class="success-message">
                     {{ session('success') }}
                 </div>
             @endif
 
-            <div class="bg-white shadow-sm sm:rounded-lg p-6 border">
+            <div class="admin-card">
+                <div class="admin-subtitle">
+                    Gestión de usuarios registrados
+                </div>
 
-                <table class="w-full text-left">
+                <table class="admin-table">
                     <thead>
-                        <tr class="border-b">
-                            <th class="py-2">Nombre</th>
+                        <tr>
+                            <th>Nombre</th>
                             <th>Email</th>
                             <th>Rol</th>
                             <th>Acciones</th>
@@ -28,51 +34,60 @@
 
                     <tbody>
                         @foreach($users as $user)
-                            <tr class="border-b">
-                                <td class="py-2">{{ $user->name }}</td>
+                            <tr class="admin-row">
+                                <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>
-                                    <span class="px-2 py-1 rounded text-white text-sm
-                                        {{ $user->role == 'admin' ? 'bg-red-500' : 'bg-blue-500' }}">
-                                        {{ $user->role }}
+                                    <span class="{{ $user->role == 'admin' ? 'role-admin' : 'role-user' }}">
+                                        {{ ucfirst($user->role) }}
                                     </span>
                                 </td>
 
-                                <td class="flex gap-2 py-2">
+                                <td>
+                                    <div class="admin-actions">
 
-                                    <!-- CAMBIAR ROL -->
-                                    <form method="POST" action="{{ route('admin.usuarios.role', $user->id) }}">
-                                        @csrf
-                                        @method('PUT')
+                                        <!-- CAMBIAR ROL -->
+                                        <form method="POST"
+                                              action="{{ route('admin.usuarios.role', $user->id) }}"
+                                              class="role-form">
+                                            @csrf
+                                            @method('PUT')
 
-                                        <select name="role" class="border rounded px-2 py-1">
-                                            <option value="usuario">usuario</option>
-                                            <option value="admin">admin</option>
-                                        </select>
+                                            <select name="role" class="select-role">
+                                                <option value="usuario"
+                                                    {{ $user->role == 'usuario' ? 'selected' : '' }}>
+                                                    Usuario
+                                                </option>
+                                                <option value="admin"
+                                                    {{ $user->role == 'admin' ? 'selected' : '' }}>
+                                                    Admin
+                                                </option>
+                                            </select>
 
-                                        <button class="bg-blue-600 text-white px-3 py-1 rounded">
-                                            Cambiar
-                                        </button>
-                                    </form>
+                                            <button type="submit" class="btn-blue">
+                                                Cambiar
+                                            </button>
+                                        </form>
 
-                                    <!-- ELIMINAR -->
-                                    <form method="POST" action="{{ route('admin.usuarios.delete', $user->id) }}">
-                                        @csrf
-                                        @method('DELETE')
+                                        <!-- ELIMINAR -->
+                                        <form method="POST"
+                                              action="{{ route('admin.usuarios.delete', $user->id) }}">
+                                            @csrf
+                                            @method('DELETE')
 
-                                        <button class="bg-red-600 text-white px-3 py-1 rounded">
-                                            Eliminar
-                                        </button>
-                                    </form>
+                                            <button type="submit" class="btn-red">
+                                                Eliminar
+                                            </button>
+                                        </form>
 
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
-
                 </table>
-
             </div>
+
         </div>
     </div>
 </x-app-layout>
