@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
+
+
+use Illuminate\Support\Facades\Cookie;
+
 class AuthenticatedSessionController extends Controller
 {
     /**
@@ -28,6 +32,9 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        // 🍪 COOKIE (ejemplo: guardar email o flag de sesión)
+        Cookie::queue('cultura_login', $request->email, 60 * 24 * 7);
+
         return redirect()->intended(route('dashboard', absolute: false));
     }
 
@@ -41,6 +48,9 @@ class AuthenticatedSessionController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
+
+        // 🍪 eliminar cookie
+        Cookie::queue(Cookie::forget('cultura_login'));
 
         return redirect('/');
     }

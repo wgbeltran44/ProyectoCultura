@@ -1497,3 +1497,37 @@ button.btn-red {
 .text-white{
     color: white;
 }
+
+.forgot-back-btn {
+    display: inline-block;
+
+    background: #e2e8f0;
+    color: #1e293b;
+
+    padding: 10px 16px;
+    border-radius: 12px;
+
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.forgot-back-btn:hover {
+    background: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+.forgot-back-btn {
+    display: inline-block;
+    color: #2563eb;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.forgot-back-btn:hover {
+    text-decoration: underline;
+}
