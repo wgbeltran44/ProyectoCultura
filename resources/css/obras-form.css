@@ -1,0 +1,100 @@
+:root {
+    --azul-principal: #2563eb;
+    --azul-hover: #1d4ed8;
+    --azul-suave: #eff6ff;
+    --texto: #1f2937;
+    --borde: #dbeafe;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f8fafc;
+    color: var(--texto);
+}
+
+/* Contenedor del formulario */
+.form-container {
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid var(--borde);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.08);
+}
+
+/* Título */
+.form-container h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: var(--azul-principal);
+    font-weight: 600;
+}
+
+/* Inputs */
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container input[type="file"],
+.form-container textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    border: 1px solid var(--borde);
+    background: var(--azul-suave);
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+/* Focus elegante */
+.form-container input:focus,
+.form-container textarea:focus {
+    outline: none;
+    border-color: var(--azul-principal);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    background: #fff;
+}
+
+/* Textarea */
+.form-container textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Labels opcionales (si decides agregarlos después) */
+.form-container label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: #475569;
+}
+
+/* Botón principal */
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background: var(--azul-principal);
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-container button:hover {
+    background: var(--azul-hover);
+    transform: translateY(-1px);
+}
+
+/* Preview de imagen */
+.preview-img {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--borde);
+}

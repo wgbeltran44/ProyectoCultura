@@ -1,58 +1,61 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            Mi Perfil
-        </h2>
-    </x-slot>
+@extends('layouts.app')
 
-    <div class="profile-container">
-        <!-- Avatar e información del usuario -->
-        <div class="profile-card">
-            <div class="profile-card-body">
-                <div class="profile-avatar">
-                    <div class="profile-avatar-circle">
-                        {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
+@section('header')
+    <h2 class="font-semibold text-xl text-slate-800 leading-tight">
+        Mi Perfil
+    </h2>
+@endsection
+
+@section('content')
+    <div class="py-12">
+        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 space-y-6">
+
+            <div class="profile-container bg-white rounded-xl shadow border border-slate-200 p-6">
+                <div class="profile-card bg-slate-50 rounded-xl p-6">
+                    <div class="profile-card-body">
+                        <div class="profile-avatar flex flex-col gap-4 sm:flex-row sm:items-center">
+                            <div class="profile-avatar-circle flex h-16 w-16 items-center justify-center rounded-full bg-slate-900 text-2xl font-bold text-white">
+                                {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
+                            </div>
+                            <div class="profile-avatar-info space-y-1">
+                                <h4 class="text-xl font-semibold text-slate-900">{{ Auth::user()->name }}</h4>
+                                <p class="text-slate-600">{{ Auth::user()->email }}</p>
+                                <p class="text-sm text-sky-700">Administrador del Sistema Cultural</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="profile-avatar-info">
-                        <h4>{{ Auth::user()->name }}</h4>
-                        <p>{{ Auth::user()->email }}</p>
-                        <p style="font-size: 0.75rem; color: #0047AB;">Administrador del Sistema Cultural</p>
+                </div>
+
+                <div class="profile-grid grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+                    <div class="profile-card bg-white rounded-xl shadow border border-slate-200 overflow-hidden">
+                        <div class="profile-card-header bg-slate-50 px-6 py-4">
+                            <h3 class="text-lg font-semibold">📝 Información del Perfil</h3>
+                        </div>
+                        <div class="profile-card-body p-6">
+                            @include('profile.partials.update-profile-information-form')
+                        </div>
+                    </div>
+
+                    <div class="profile-card bg-white rounded-xl shadow border border-slate-200 overflow-hidden">
+                        <div class="profile-card-header bg-slate-50 px-6 py-4">
+                            <h3 class="text-lg font-semibold">🔒 Actualizar Contraseña</h3>
+                        </div>
+                        <div class="profile-card-body p-6">
+                            @include('profile.partials.update-password-form')
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-card bg-white rounded-xl shadow border border-slate-200 overflow-hidden">
+                    <div class="profile-card-header bg-slate-50 px-6 py-4">
+                        <h3 class="text-lg font-semibold">⚠️ Zona de Peligro</h3>
+                    </div>
+                    <div class="profile-card-body p-6">
+                        @include('profile.partials.delete-user-form')
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Grid de 2 columnas para información y contraseña -->
-        <div class="profile-grid">
-            <!-- Información del perfil -->
-            <div class="profile-card">
-                <div class="profile-card-header">
-                    <h3>📝 Información del Perfil</h3>
-                </div>
-                <div class="profile-card-body">
-                    @include('profile.partials.update-profile-information-form')
-                </div>
-            </div>
-
-            <!-- Cambiar contraseña -->
-            <div class="profile-card">
-                <div class="profile-card-header">
-                    <h3>🔒 Actualizar Contraseña</h3>
-                </div>
-                <div class="profile-card-body">
-                    @include('profile.partials.update-password-form')
-                </div>
-            </div>
-        </div>
-
-        <!-- Eliminar cuenta (fila completa) -->
-        <div class="profile-card">
-            <div class="profile-card-header">
-                <h3>⚠️ Zona de Peligro</h3>
-            </div>
-            <div class="profile-card-body">
-                @include('profile.partials.delete-user-form')
-            </div>
         </div>
     </div>
-</x-app-layout>
+@endsection

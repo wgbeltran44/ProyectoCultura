@@ -1,12 +1,14 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\ObraController;
 
 /*
-|--------------------------------------------------------------------------
-| PÁGINA PRINCIPAL
-|--------------------------------------------------------------------------
+|-------------------------
+| PUBLIC
+|-------------------------
 */
 
 Route::get('/', function () {
@@ -14,23 +16,23 @@ Route::get('/', function () {
 });
 
 /*
-|--------------------------------------------------------------------------
-| DASHBOARD (USUARIOS LOGUEADOS)
-|--------------------------------------------------------------------------
-*/
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-/*
-|--------------------------------------------------------------------------
-| PERFIL USUARIO (SOLO LOGIN)
-|--------------------------------------------------------------------------
+|-------------------------
+| AUTH USERS (TODO LO NORMAL)
+|-------------------------
 */
 
 Route::middleware(['auth'])->group(function () {
 
+    /*
+    | Dashboard
+    */
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    /*
+    | Perfil
+    */
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -40,16 +42,10 @@ Route::middleware(['auth'])->group(function () {
             'user' => auth()->user()
         ]);
     })->name('profile.show');
-});
 
-/*
-|--------------------------------------------------------------------------
-| CULTURA (SOLO LOGIN, NO ADMIN)
-|--------------------------------------------------------------------------
-*/
-
-Route::middleware(['auth'])->group(function () {
-
+    /*
+    | Cultura (tus vistas normales)
+    */
     Route::get('/tradiciones', function () {
         return view('tradiciones');
     })->name('tradiciones');
@@ -61,12 +57,18 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/turismo', function () {
         return view('turismo');
     })->name('turismo');
+
+    /*
+    | CRUD OBRAS (MANTENIDO, SOLO UNA VEZ)
+    */
+    Route::resource('obras', ObraController::class);
+
 });
 
 /*
-|--------------------------------------------------------------------------
+|-------------------------
 | ADMIN (SOLO ADMIN)
-|--------------------------------------------------------------------------
+|-------------------------
 */
 
 Route::middleware(['auth', 'is_admin'])->group(function () {
@@ -82,9 +84,9 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
 });
 
 /*
-|--------------------------------------------------------------------------
+|-------------------------
 | AUTH
-|--------------------------------------------------------------------------
+|-------------------------
 */
 
 require __DIR__.'/auth.php';

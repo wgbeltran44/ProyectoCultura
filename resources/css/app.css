@@ -1531,3 +1531,75 @@ button.btn-red {
 .forgot-back-btn:hover {
     text-decoration: underline;
 }
+
+
+.container {
+    padding: 20px;
+}
+
+.titulo {
+    color: #0a3d62;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #0a3d62;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.imagen {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.tipo {
+    color: #3c6382;
+    font-size: 14px;
+}
+
+.acciones {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-edit {
+    background: #38ada9;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.btn-delete {
+    background: #e55039;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}

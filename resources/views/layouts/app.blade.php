@@ -13,6 +13,7 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/css/obras-form.css'])
     </head>
 
     <body class="font-sans antialiased">
@@ -37,17 +38,21 @@
             </div>
 
             <!-- Page Heading -->
-            @isset($header)
+            @if (isset($header) || $__env->hasSection('header'))
                 <header class="bg-white shadow-sm border-b border-slate-200">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
+                        @isset($header)
+                            {{ $header }}
+                        @else
+                            @yield('header')
+                        @endisset
                     </div>
                 </header>
-            @endisset
+            @endif
 
             <!-- Page Content -->
             <main>
-                {{ $slot }}
+                @yield('content')
             </main>
 
         </div>

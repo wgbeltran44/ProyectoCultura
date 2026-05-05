@@ -18,6 +18,10 @@ class UserController extends Controller
     // Cambiar rol de usuario
     public function updateRole(Request $request, $id)
     {
+        $request->validate([
+            'role' => 'required|in:admin,artista,usuario'
+        ]);
+
         $user = User::findOrFail($id);
 
         $user->role = $request->role;
@@ -26,10 +30,16 @@ class UserController extends Controller
         return back()->with('success', 'Rol actualizado correctamente');
     }
 
-    // Eliminar usuario (opcional pero útil)
+    // Eliminar usuario
     public function delete($id)
     {
         $user = User::findOrFail($id);
+
+        // 🚨 evitar auto-eliminación
+        if (auth()->id() == $user->id) {
+            return back()->with('error', 'No puedes eliminarte a ti mismo');
+        }
+
         $user->delete();
 
         return back()->with('success', 'Usuario eliminado');
