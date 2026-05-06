@@ -1,0 +1,146 @@
+/* ========================================
+   PÁGINA PRINCIPAL (WELCOME)
+   ======================================== */
+.welcome-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+/* Hero section */
+.hero-section {
+    background: linear-gradient(120deg, #ffffff, #fff8ef);
+    border-radius: 48px;
+    padding: 60px 40px;
+    text-align: center;
+    margin-bottom: 60px;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid rgba(233, 162, 59, 0.2);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #0a2f44, #1e5a7d, #e9a23b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #5a6e7c;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* Botones de acción */
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #1e5a7d, #0a2f44);
+    color: white;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(30, 90, 125, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #1e5a7d;
+    color: #1e5a7d;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #1e5a7d;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Tarjetas de características */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin: 60px 0;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 28px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid #f0e5d8;
+    cursor: pointer;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--sombra-hover);
+    border-color: var(--ocre);
+}
+
+.feature-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.feature-card h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--azul-profundo);
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #6b7a8a;
+    line-height: 1.6;
+}
+
+/* Sección de estadísticas */
+.stats-section {
+    background: linear-gradient(135deg, #0a2f44, #1e5a7d);
+    border-radius: 48px;
+    padding: 50px 40px;
+    margin-top: 60px;
+    text-align: center;
+    color: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px;
+    margin-top: 32px;
+}
+
+.stat-item h4 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #e9a23b;
+}
+
+.stat-item p {
+    font-size: 1rem;
+    opacity: 0.9;
+}

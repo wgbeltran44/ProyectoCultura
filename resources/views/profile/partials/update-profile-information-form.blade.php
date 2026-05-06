@@ -9,13 +9,13 @@
 
         <div class="profile-field">
             <label for="name">Nombre completo</label>
-            <input id="name" name="name" type="text" class="profile-input" :value="old('name', $user->name)" required autofocus autocomplete="name">
+            <input id="name" name="name" type="text" class="profile-input" value="{{ old('name', $user->name) }}" required autofocus autocomplete="name">
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
         <div class="profile-field">
             <label for="email">Correo electrónico</label>
-            <input id="email" name="email" type="email" class="profile-input" :value="old('email', $user->email)" required autocomplete="username">
+            <input id="email" name="email" type="email" class="profile-input" value="{{ old('email', $user->email) }}" required autocomplete="username">
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())

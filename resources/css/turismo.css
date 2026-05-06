@@ -1,68 +1,165 @@
-/* Turismo - Destinos y lugares de interes */
+@import 'variables.css';
 
+/* ========================================
+   TURISMO - Página completa
+   ======================================== */
+
+.turismo-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+/* Hero */
 .turismo-hero {
     background: linear-gradient(135deg, #2e7d64, #3b9e82);
-    border-radius: var(--border-radius-card);
-    padding: 2rem;
+    border-radius: 32px;
+    padding: 50px 40px;
     color: white;
-    margin-bottom: 2rem;
-}
-
-.turismo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.8rem;
-    margin: 2rem 0;
-}
-
-.turismo-card {
-    background: white;
-    border-radius: var(--border-radius-card);
-    overflow: hidden;
-    transition: all 0.3s;
+    margin-bottom: 48px;
+    text-align: center;
     box-shadow: var(--sombra-suave);
 }
 
-.turismo-card:hover {
-    transform: scale(1.02) translateY(-4px);
-    box-shadow: var(--sombra-hover);
+.turismo-hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 16px;
 }
 
-.turismo-card img {
+.turismo-hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Imagen principal */
+.turismo-imagen {
+    background: white;
+    border-radius: 28px;
+    overflow: hidden;
+    margin-bottom: 48px;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid rgba(233, 162, 59, 0.2);
+}
+
+.turismo-imagen img {
     width: 100%;
-    height: 190px;
+    height: 400px;
     object-fit: cover;
 }
 
-.turismo-card-content {
-    padding: 1.5rem;
+.turismo-imagen p {
+    padding: 24px;
+    color: #5a6e7c;
+    line-height: 1.6;
 }
 
-.turismo-card h3 {
-    color: var(--verde-esmeralda);
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
+/* Grid destinos */
+.turismo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin-bottom: 48px;
 }
 
-.turismo-card p {
-    color: #4a5568;
+.destino-card {
+    background: white;
+    border-radius: 24px;
+    padding: 28px;
+    transition: all 0.3s;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid #f0e5d8;
 }
 
-.turismo-badge {
-    display: inline-block;
-    background: var(--ocre);
-    color: var(--azul-profundo);
-    border-radius: 40px;
-    padding: 4px 12px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    margin-bottom: 0.8rem;
+.destino-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-hover);
+    border-color: var(--ocre);
 }
 
-.turismo-stats {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-    font-size: 0.85rem;
-    color: #64748b;
+.destino-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2e7d64;
+    margin-bottom: 16px;
+}
+
+.destino-card p {
+    color: #6b7a8a;
+    line-height: 1.6;
+}
+
+/* Importancia */
+.turismo-importancia {
+    background: linear-gradient(135deg, #0a2f44, #1e5a7d);
+    border-radius: 28px;
+    padding: 40px;
+    color: white;
+    margin-bottom: 48px;
+}
+
+.turismo-importancia h3 {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.turismo-importancia ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.turismo-importancia li {
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* Botón volver */
+.turismo-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #2e7d64, #236b55);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.turismo-back:hover {
+    transform: translateX(-5px);
+    background: linear-gradient(135deg, #3b9e82, #2e7d64);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .turismo-container {
+        padding: 20px 16px;
+    }
+    
+    .turismo-hero {
+        padding: 30px 20px;
+    }
+    
+    .turismo-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .turismo-imagen img {
+        height: 250px;
+    }
+    
+    .turismo-importancia ul {
+        grid-template-columns: 1fr;
+    }
 }

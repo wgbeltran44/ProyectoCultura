@@ -1,8 +1,6 @@
 <section class="space-y-4">
-    <div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 1rem; border-radius: 12px;">
-        <p style="color: #991b1b; font-size: 0.875rem; margin: 0;">
-            ⚠️ Una vez eliminada tu cuenta, todos los datos serán borrados permanentemente.
-        </p>
+    <div class="danger-warning">
+        <p>⚠️ Una vez eliminada tu cuenta, todos los datos serán borrados permanentemente.</p>
     </div>
 
     <button
@@ -18,11 +16,11 @@
             @csrf
             @method('delete')
 
-            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+            <h2 class="text-lg font-medium text-gray-900">
                 ¿Estás seguro de eliminar tu cuenta?
             </h2>
 
-            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+            <p class="mt-1 text-sm text-gray-600">
                 Ingresa tu contraseña para confirmar la eliminación permanente.
             </p>
 

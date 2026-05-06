@@ -1,0 +1,15 @@
+:root {
+    --azul-profundo: #0a2f44;
+    --azul-medio: #1e5a7d;
+    --azul-claro: #3a7ca5;
+    --ocre: #e9a23b;
+    --ocre-oscuro: #c47d2a;
+    --beige: #fef7ea;
+    --negro-suave: #3e3a36;
+    --verde-esmeralda: #2e7d64;
+    
+    --border-radius-card: 20px;
+    --border-radius-boton: 50px;
+    --sombra-suave: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    --sombra-hover: 0 20px 35px -8px rgba(0, 0, 0, 0.15);
+}
