@@ -6,7 +6,12 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ObraController;
 use App\Http\Controllers\EstadisticasController;
+use App\Http\Controllers\CustomLoginController;
 
+// Esta línea debe existir
+Route::post('/login', [CustomLoginController::class, 'login'])
+    ->middleware('login.rate.limiter')
+    ->name('login');
 /*
 |-------------------------
 | PUBLIC

@@ -12,9 +12,9 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
-        'is_admin' => \App\Http\Middleware\IsAdmin::class,
+            'is_admin' => \App\Http\Middleware\IsAdmin::class,
+            'login.rate.limiter' => \App\Http\Middleware\LoginRateLimiter::class, // 👈 Agrega esta línea
         ]);
-        //
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
