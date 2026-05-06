@@ -1,0 +1,68 @@
+/* Turismo - Destinos y lugares de interes */
+
+.turismo-hero {
+    background: linear-gradient(135deg, #2e7d64, #3b9e82);
+    border-radius: var(--border-radius-card);
+    padding: 2rem;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.turismo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+    margin: 2rem 0;
+}
+
+.turismo-card {
+    background: white;
+    border-radius: var(--border-radius-card);
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow: var(--sombra-suave);
+}
+
+.turismo-card:hover {
+    transform: scale(1.02) translateY(-4px);
+    box-shadow: var(--sombra-hover);
+}
+
+.turismo-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.turismo-card-content {
+    padding: 1.5rem;
+}
+
+.turismo-card h3 {
+    color: var(--verde-esmeralda);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.turismo-card p {
+    color: #4a5568;
+}
+
+.turismo-badge {
+    display: inline-block;
+    background: var(--ocre);
+    color: var(--azul-profundo);
+    border-radius: 40px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+
+.turismo-stats {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #64748b;
+}

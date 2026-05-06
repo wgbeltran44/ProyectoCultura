@@ -1,0 +1,143 @@
+/* Admin Usuarios - Gestion de usuarios */
+
+.admin-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fef7ea 0%, #fff3e0 100%);
+    padding: 40px 0;
+}
+
+.admin-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.admin-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--azul-profundo), var(--azul-medio));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.admin-total {
+    font-size: 0.9rem;
+    background: var(--beige);
+    padding: 0.3rem 0.8rem;
+    border-radius: 40px;
+    color: var(--azul-profundo);
+}
+
+.admin-card {
+    background: white;
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--sombra-suave);
+    overflow: hidden;
+    border: 1px solid #f3e8d3;
+}
+
+.admin-subtitle {
+    background: linear-gradient(90deg, var(--ocre), var(--ocre-oscuro));
+    color: white;
+    padding: 18px 24px;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th {
+    background: #faf3e8;
+    color: var(--azul-profundo);
+    font-weight: 700;
+    padding: 16px;
+    text-align: left;
+    border-bottom: 2px solid var(--ocre);
+}
+
+.admin-table td {
+    padding: 16px;
+    color: #3e3a36;
+    border-bottom: 1px solid #f0e5d8;
+}
+
+.admin-row:hover {
+    background: #fff8ef;
+    transition: 0.2s;
+}
+
+.role-admin {
+    background: linear-gradient(90deg, #d9453b, #b32d24);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.role-user, .role-artista {
+    background: linear-gradient(90deg, var(--azul-medio), var(--azul-claro));
+    color: white;
+    padding: 6px 14px;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.role-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.select-role {
+    border: 1px solid #d6d3d1;
+    padding: 8px 12px;
+    border-radius: 50px;
+    background: white;
+    outline: none;
+    font-size: 0.85rem;
+}
+
+.btn-blue {
+    background: linear-gradient(90deg, var(--azul-medio), var(--azul-profundo));
+    color: white;
+    padding: 8px 18px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-red {
+    background: linear-gradient(90deg, #e05a4f, #c13b30);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
