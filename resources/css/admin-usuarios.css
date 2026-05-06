@@ -1,0 +1,150 @@
+/* CONTENEDOR GENERAL */
+.admin-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fff7ed, #fef3c7);
+    padding: 40px 0;
+}
+
+/* ANCHO Y CENTRADO */
+.admin-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ENCABEZADO */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #7c2d12;
+}
+
+.admin-total {
+    font-size: 0.9rem;
+    color: #78716c;
+}
+
+/* MENSAJE */
+.success-message {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* TARJETA */
+.admin-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(120, 53, 15, 0.12);
+    overflow: hidden;
+    border: 1px solid #f3e8d3;
+}
+
+/* SUBTITULO */
+.admin-subtitle {
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+    color: white;
+    padding: 18px 24px;
+    font-weight: 600;
+}
+
+/* TABLA */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th {
+    background: #fff7ed;
+    color: #92400e;
+    font-weight: 700;
+    padding: 16px;
+    text-align: left;
+    border-bottom: 2px solid #fcd34d;
+}
+
+.admin-table td {
+    padding: 16px;
+    color: #44403c;
+}
+
+/* FILAS */
+.admin-row {
+    transition: 0.25s;
+}
+
+.admin-row:hover {
+    background: #fffbeb;
+}
+
+/* ROLES */
+.role-admin {
+    background: linear-gradient(90deg, #dc2626, #b91c1c);
+    color: white;
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.role-user {
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    color: white;
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ACCIONES */
+.admin-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.role-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* SELECT */
+.select-role {
+    border: 1px solid #d6d3d1;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: white;
+    outline: none;
+}
+
+/* BOTONES */
+.btn-blue {
+    background: linear-gradient(90deg, #0ea5e9, #0284c7);
+    color: white;
+    padding: 9px 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-red {
+    background: linear-gradient(90deg, #ef4444, #dc2626);
+    color: white;
+    padding: 9px 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
