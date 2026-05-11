@@ -1,0 +1,141 @@
+/* Dashboard - Panel de Control Cultural */
+
+.dashboard-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Hero del dashboard */
+.dashboard-hero {
+    background: linear-gradient(135deg, var(--azul-profundo), var(--azul-medio));
+    border-radius: var(--border-radius-card);
+    padding: 2.5rem;
+    color: white;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--sombra-suave);
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard-hero::after {
+    content: "";
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(233,162,59,0.2) 0%, rgba(0,0,0,0) 70%);
+    border-radius: 50%;
+}
+
+.dashboard-hero h1 {
+    color: white;
+    background: none;
+    -webkit-background-clip: unset;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-hero p {
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+/* Grid de tarjetas de sección */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.dashboard-card {
+    background: white;
+    border-radius: var(--border-radius-card);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid rgba(233, 162, 59, 0.2);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-hover);
+}
+
+.dashboard-card-header {
+    background: linear-gradient(120deg, var(--beige), #fff);
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--ocre);
+}
+
+.dashboard-card-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dashboard-card-body {
+    padding: 1.5rem;
+    color: var(--negro-suave);
+    line-height: 1.5;
+}
+
+.dashboard-card-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #f0e5d8;
+    text-align: right;
+}
+
+/* Secciones internas (tradiciones, gastronomía, turismo) */
+.dashboard-section {
+    background: white;
+    border-radius: var(--border-radius-card);
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--sombra-suave);
+    border-left: 6px solid var(--ocre);
+}
+
+.dashboard-section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.dashboard-section p {
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+/* Botón volver */
+.back-button {
+    display: inline-block;
+    background: var(--azul-medio);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--border-radius-boton);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.back-button:hover {
+    background: var(--azul-profundo);
+    transform: translateX(-4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 1rem;
+    }
+    .dashboard-hero {
+        padding: 1.5rem;
+    }
+    .dashboard-grid {
+        gap: 1rem;
+    }
+}
